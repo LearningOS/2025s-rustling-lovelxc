@@ -22,14 +22,13 @@
 // Execute `rustlings hint errors5` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
 use std::error;
 use std::fmt;
 use std::num::ParseIntError;
 
 // TODO: update the return type of `main()` to make this compile.
-fn main() -> Result<(), Box<dyn ???>> {
+// 见 https://rustwiki.org/zh-CN/book/ch09-02-recoverable-errors-with-result.html#-%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%AF%E8%A2%AB%E7%94%A8%E4%BA%8E%E8%BF%94%E5%9B%9E-result-%E7%9A%84%E5%87%BD%E6%95%B0
+fn main() -> Result<(), Box<dyn error::Error>> {
     let pretend_user_input = "42";
     let x: i64 = pretend_user_input.parse()?;
     println!("output={:?}", PositiveNonzeroInteger::new(x)?);
